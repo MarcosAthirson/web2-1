@@ -1,0 +1,175 @@
+main{
+    height: 100%;
+    overflow: auto;
+}
+
+main .center{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 2%;
+}
+
+.item{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid #e0192e;
+    border-radius: 8px;
+    padding: 10px 5px;
+    position: relative;
+}
+
+.item > *:not([class='clear']){
+    float: left;
+}
+
+.image{
+    width: 150px;
+    height: 120px;
+    background-image: url('../imgs/camisas.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.description{
+    width: calc(100% - 150px - 80px - 150px);
+    text-align: justify;
+}
+
+.qtd{
+    width: 80px;
+    text-align: center;
+}
+
+.total{
+    width: 150px;
+    text-align: center;
+}
+
+.price{
+    display: flex; 
+    justify-content: center;   
+}
+
+.price > *{
+    margin: 0 20px;
+}
+
+
+.item .maneger{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.maneger > *{
+    border: none;
+    border-radius: 50%;
+    margin: 2px;
+    cursor: pointer;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: 0.2s;
+}
+
+.maneger > *:hover{
+    transform: scale(1.2);
+}
+
+.less{
+    background-color: rgb(224, 16, 16);
+    background-image: url('../imgs/remove.png');
+}
+
+.plus{
+    background-color: green;
+    background-image:  url('../imgs/add.png');
+}
+
+.remove{
+    background-color: none;
+    background-image:  url('../imgs/close.png');
+}
+
+@media screen and (max-width: 700px) {
+
+    .item > *{
+        font-size: 14px;
+    }
+    .image{
+        width: 100px;
+        height: 80px;
+    }
+    
+    .description{
+        width: calc(100% - 100px - 60px - 100px);
+    }
+    
+    .qtd{
+        width: 60px;
+    }
+    
+    .total{
+        width: 100px;
+    }
+
+
+    .item .maneger{
+        top: 5px;
+        right: 5px;
+    }
+    
+    .maneger > *{
+        width: 20px;
+        height: 20px;
+        margin: 2px 6px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .item > *{
+        font-size: 12px;
+    }
+
+    .image{
+        width: 60px;
+        height: 40px;
+    }
+    
+    .description{
+        width: calc(100% - 60px - 40px - 70px);
+    }
+    
+    .qtd{
+        width: 40px;
+    }
+    
+    .total{
+        width: 70px;
+    }
+
+
+    .item .maneger{
+        background-color: white;
+        top: -15px;
+        right: 10px;
+        padding: 0 8px;
+    }
+    
+    .maneger > *{
+        width: 20px;
+        height: 20px;
+    }
+    
+}
+
+

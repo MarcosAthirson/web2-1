@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.center{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+.clear{clear: both;}
+
+html, body{
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    background-color: #e0192e;
+}
+
+header .center{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.desktop-menu a{
+    text-decoration: none;
+    margin-left: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.mobile-menu img{
+    padding-top: 5px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.menu{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    max-width: 250px;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    border: 1px solid #e0192e;
+    padding: 20px 0;
+    overflow: hidden;
+    background-color: white;
+    z-index: 1;
+    transition: 0.4s;
+}
+
+.menu a{
+    display: block;
+    color: #e0192e;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 0;
+    transition: 0.2s;
+}
+
+.menu a:hover{
+    background-color: #e0192d1f;
+}
+
+footer{
+    background-color: #e0192e;
+    text-align: center;
+    padding: 5px 0;
+    color: white;
+    font-size: 14px;
+}
+
+.button{
+    display: block;
+    background-color: #e0192e;
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    padding: 5px 0;
+    text-align: center;
+    margin: 10px auto;
+    color: white;
+    transition: 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover{
+    transform: translate(0, -5px);
+}
+
+@media screen and (max-width: 800px) {
+    .desktop-menu{display: none;}
+    .mobile-menu{display: block;}
+}

@@ -1,0 +1,171 @@
+main{
+    height: 100%;
+    overflow: auto;
+}
+
+main .center{
+    padding: 70px 2%;
+    position: relative;
+}
+
+.add-item{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e0192e;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    right: 3%;
+    background-color: white;
+    background-image: url('../imgs/add-red.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.add-item:hover{
+    transform: translate(0, -5px);
+}
+
+
+.item{
+    width: calc(100% / 3);
+    padding: 10px;
+    float: left;
+}
+
+.content{
+    width: 100%;
+    border: 1px solid #e0192e;
+    border-radius: 8px;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+.content:hover{
+    transform: scale(1.02);
+    box-shadow: 12px 12px 10px -10px #e0192e;
+}
+
+.content a{
+    width: 130px;
+}
+
+.item .image{
+    width: 100%;
+    padding-top: 70%;
+    background-image: url('../imgs/camisas.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.item .nomeItem {
+    text-align: justify;
+    padding: 5px 12px;
+}
+
+.item .value{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.add{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-add{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-image: url('../imgs/bg-add.png');
+    background-position: 80% center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.addItemVitrine{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 100%;
+    max-width: 280px;
+    border: 1px solid #e0192e;
+    border-radius: 12px;
+    padding: 40px 10px;
+    color: #e0192e;
+    box-shadow: 5px 5px 50px -5px #e0192e;
+}
+
+.addItemVitrine > div{
+    margin-bottom: 10px;
+}
+
+.addItemVitrine input:not(.button){
+    height: 40px;
+    width: 100%;
+    padding: 0 10px;
+    border: 1px solid #e0192e;
+    border-radius: 6px;
+}
+
+.addItemVitrine input:not(.button){
+    outline: none;
+}
+
+.fechar{
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e0192e;
+    border-radius: 50%;
+    background-color: white;
+    background-image: url('../imgs/close.png');
+    background-image: url('../imgs/close.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.fechar:hover{
+    transform: scale(1.2);
+    box-shadow: 2px 2px 10px 0 #e0192e;
+}
+
+@media screen and (max-width: 1000px){
+    .bg-add{
+        background-position: right center;
+        background-size: 1000px;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .item{width: calc(100% / 2);}
+}
+
+@media screen and (max-width: 460px){
+    .item .description {
+        font-size: 13px;
+        padding: 5px;
+    }
+}

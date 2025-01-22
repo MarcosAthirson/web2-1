@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/padrao.css">
+    <link rel="stylesheet" href="../static/css/form.css">
+    <title>CADASTRO</title>
+</head>
+<body>
+    <main>
+        <form action="/cadastrar" method="post">
+            <div class="name">
+                <label for="login">LOGIN</label>
+                <input id="login" type="text" name="login">
+            </div>
+
+            <div class="s1">
+                <label for="s1">SENHA</label>
+                <input id="s1" type="password" name="senha">
+            </div>
+
+            <div class="s2">
+                <label for="s2">CONFIRMAR SENHA</label>
+                <input id="s2" type="password">
+            </div>
+
+            <div class="action">
+                <input class="button" type="submit" value="CADASTRAR">
+                <a href="/pageLogin">LOGIN</a>
+            </div>
+
+            <p class="msg" style="position: absolute; bottom: 0; left: 10px; text-transform: uppercase;">{{msg}}</p>
+            <a href="/" class="voltar"></a>
+        </form>
+    </main>
+
+    <script src="../static/js/cadastro.js"></script>
+</body>
+</html>
