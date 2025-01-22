@@ -92,4 +92,5 @@ def sair():
     session['login'] = None
     return render_template('page/home.html')
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
