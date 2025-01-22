@@ -2,10 +2,15 @@ import psycopg2
 
 def conectardb():
     con = psycopg2.connect(
-        host='localhost',
-        database='loja',
-        user='postgres',
-        password='12345'
+        #host='localhost',
+        #database='loja',
+        #user='postgres',
+        #password='12345'
+
+        host = 'dpg-cu7995a3esus73fhpalg-a.oregon-postgres.render.com',
+        database = 'bancoweb2',
+        user = 'bancoweb2_user',
+        password = 'WcFOjr0Yq8TzefZeZp1XD0lvd8xRDJrK'
     )
     return con
 
