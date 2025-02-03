@@ -11,8 +11,6 @@ def pageHome():
     else:
         return render_template('page/home.html')
 
-
-
 @app.route('/pageVitrine', methods=['GET'])
 def pageVitrine():
     listaItens = dao.carregarItensVitrine(dao.conectardb())
@@ -23,12 +21,10 @@ def pageVitrine():
     else:
         return render_template('page/vitrine.html', listaItens=listaItens)
 
-
-
 @app.route('/addItemVitrine', methods=['POST'])
 def addItemVitrine():
     nomeItem = request.form.get('nomeItem')
-    valorItem = int(request.form.get('valorItem'))
+    valorItem = float(request.form.get('valorItem'))
     qtdItem = int(request.form.get('qtdItem'))
 
     if dao.cadastrarItem(nomeItem, valorItem, qtdItem, dao.conectardb()):
@@ -36,8 +32,9 @@ def addItemVitrine():
     else:
         mgsCadastrado = 'Erro: esse item já existe.'
 
+    listaItens = dao.carregarItensVitrine(dao.conectardb())
     login = session['login']
-    return render_template('page/vitrine.html', login=login, mgsCadastrado=mgsCadastrado)
+    return render_template('page/vitrine.html', login=login, mgsCadastrado=mgsCadastrado, listaItens=listaItens)
 
 @app.route('/pageCarrinho', methods=['GET'])
 def pageCarrinho():

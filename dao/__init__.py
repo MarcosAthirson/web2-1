@@ -56,10 +56,6 @@ def cadastrarItem(nomeItem, valorItem, qtdItem, conexao):
     conexao.close()
     return exito
 
-
-
-
-
 def carregarItensVitrine(conexao):
     cur = conexao.cursor()
     cur.execute(f"select * from itens")
@@ -67,6 +63,4 @@ def carregarItensVitrine(conexao):
     cur.close()
     conexao.close()
     return resultado
-
-
 
