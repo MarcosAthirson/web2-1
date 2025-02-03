@@ -4,20 +4,14 @@ import dao
 app = Flask(__name__)
 app.secret_key = '123'
 
-#mudei
-
-
-
 @app.route('/')
 def pageHome():
     if 'login' in session:
-        login = session['login']
-        if login != None:
-            return render_template('pageUser/homeUser.html')
-        else:
-            return render_template('page/home.html')
+        return render_template('pageUser/homeUser.html')
     else:
         return render_template('page/home.html')
+
+
 
 @app.route('/pageVitrine', methods=['GET'])
 def pageVitrine():
@@ -25,12 +19,11 @@ def pageVitrine():
 
     if 'login' in session:
         login = session['login']
-        if login != None:
-            return render_template('page/vitrine.html', login=login, listaItens=listaItens)
-        else:
-            return render_template('page/vitrine.html', listaItens=listaItens)
+        return render_template('page/vitrine.html', login=login, listaItens=listaItens)
     else:
         return render_template('page/vitrine.html', listaItens=listaItens)
+
+
 
 @app.route('/addItemVitrine', methods=['POST'])
 def addItemVitrine():
@@ -49,11 +42,7 @@ def addItemVitrine():
 @app.route('/pageCarrinho', methods=['GET'])
 def pageCarrinho():
     if 'login' in session:
-        login = session['login']
-        if login != None:
-            return render_template('pageUser/carrinhoUser.html')
-        else:
-            return render_template('page/login.html')
+        return render_template('pageUser/carrinhoUser.html')
     else:
         return render_template('page/login.html')
 
@@ -90,8 +79,11 @@ def cadastrar():
 
 @app.route('/sair')
 def sair():
-    session['login'] = None
-    return render_template('page/home.html')
+    if 'login' in session:
+        session.pop('login')
+        return render_template('page/home.html')
+    else:
+        return render_template('page/home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

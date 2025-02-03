@@ -41,14 +41,18 @@
         <div class="center">
             <div class="add-item" title="ADICIONAR ITEM"></div>
 
+
+            {% for item in listaItens %}
             <div class="item">
                 <div class="content">
                     <div class="image"></div>
-                    <p class="nomeItem">nome do item</p>
-                    <p class="value">400,00R$</p>
-                    <a class="button" href="/pageLogin" title="Adicionar ao carrinho">ADICIONAR</a>
+                    <p class="nomeItem">{{item[0]}}</p>
+                    <p class="value">R$ {{item[1]}}</p>
+                    <a class="button" href="/pageLogin/{{item[0]}}" title="Adicionar ao carrinho">ADICIONAR</a>
                 </div>
             </div>
+            {% endfor %}
+
 
             <div class="clear"></div>
         </div>
