@@ -4,13 +4,6 @@ import dao
 app = Flask(__name__)
 app.secret_key = '123'
 
-
-#testando o Blueprint
-from rotas.teste import  teste_bp
-app.register_blueprint(teste_bp, url_prefix="/teste")
-
-
-
 @app.route('/')
 def pageHome():
     if 'login' in session:
