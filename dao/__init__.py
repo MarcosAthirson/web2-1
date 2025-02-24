@@ -7,10 +7,10 @@ def conectardb():
         #user='postgres',
         #password='12345'
 
-        host = 'dpg-cu7995a3esus73fhpalg-a.oregon-postgres.render.com',
-        database = 'bancoweb2',
-        user = 'bancoweb2_user',
-        password = 'WcFOjr0Yq8TzefZeZp1XD0lvd8xRDJrK'
+        host = 'dpg-cutrmh2j1k6c738fh9ig-a.oregon-postgres.render.com',
+        database = 'bancoweb2_qhvz',
+        user = 'bancoweb2_qhvz_user',
+        password = 'dOW8ENBMkFkG7Lnn0P2PeqfNW4P8Uxr8'
     )
     return con
 
